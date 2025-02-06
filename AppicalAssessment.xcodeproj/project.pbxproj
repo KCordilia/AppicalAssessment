@@ -40,11 +40,6 @@
 			path = AppicalAssessmentTests;
 			sourceTree = "<group>";
 		};
-		8A306EFE2D54BD0C00FB6E9F /* AppicalAssessmentUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = AppicalAssessmentUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +72,6 @@
 			children = (
 				8A306EE02D54BD0B00FB6E9F /* AppicalAssessment */,
 				8A306EF42D54BD0C00FB6E9F /* AppicalAssessmentTests */,
-				8A306EFE2D54BD0C00FB6E9F /* AppicalAssessmentUITests */,
 				8A306EDF2D54BD0B00FB6E9F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -152,9 +146,6 @@
 			);
 			dependencies = (
 				8A306EFD2D54BD0C00FB6E9F /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				8A306EFE2D54BD0C00FB6E9F /* AppicalAssessmentUITests */,
 			);
 			name = AppicalAssessmentUITests;
 			packageProductDependencies = (
