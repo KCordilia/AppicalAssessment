@@ -18,7 +18,7 @@ enum ViewState<T> {
 class NewHiresViewModel: ObservableObject {
     @Published var newHires: [NewHire] = []
     @Published var viewState: ViewState<[NewHire]> = .loading
-    @Published var isAscending: Bool = true
+    @Published var sortingOption: SortingOption = .earliestDateFirst
 
     private let networkService: NetworkServiceProtocol
 
@@ -44,12 +44,16 @@ class NewHiresViewModel: ObservableObject {
     }
 
     func sortNewHires() {
-        newHires.sort { isAscending ? $0.startDate < $1.startDate : $0.startDate > $1.startDate}
+        switch sortingOption {
+        case .earliestDateFirst:
+            newHires.sort { $0.startDate < $1.startDate }
+        case .latestDateFirst:
+            newHires.sort { $0.startDate > $1.startDate }
+        }
+
     }
 
     func toggleSortOrder() {
-        isAscending.toggle()
         sortNewHires()
-        print("Sorting order is now: \(isAscending ? "Ascending" : "Descending")")
     }
 }

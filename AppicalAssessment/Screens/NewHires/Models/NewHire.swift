@@ -13,6 +13,7 @@ struct NewHire: Codable {
     let lastName: String
     let role: String
     let startDate: String
+    let avatar: String
 
     // Computed property to format the date
     var formattedStartDate: String {
