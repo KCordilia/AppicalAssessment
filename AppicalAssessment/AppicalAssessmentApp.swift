@@ -25,7 +25,7 @@ struct AppicalAssessmentApp: App {
 
     var body: some Scene {
         WindowGroup {
-            NewHiresView()
+            DashboardView()
         }
         .modelContainer(sharedModelContainer)
     }

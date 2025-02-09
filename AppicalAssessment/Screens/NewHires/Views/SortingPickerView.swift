@@ -25,7 +25,7 @@ struct SortingPickerView: View {
             }
         } label: {
             Image(systemName: "arrow.up.arrow.down")
-                .foregroundColor(.blue)
+                .foregroundColor(.white)
         }
     }
 }

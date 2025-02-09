@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct NewHireCellView: View {
+    @State var isPressed = false
     let name: String
     let startDate: String
     let avatar: String
@@ -46,11 +47,17 @@ struct NewHireCellView: View {
 
                 Button(action: {
                     // Action to send welcome message
+                    isPressed = true
                     print("Send welcome message to \(name)")
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        isPressed = false
+                    }
                 }) {
                     Text("Send welcome message")
                         .font(.subheadline)
                         .foregroundColor(.blue)
+                        .scaleEffect(isPressed ? 0.95 : 1.0)
+                        .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isPressed)
                 }
             }
         }
