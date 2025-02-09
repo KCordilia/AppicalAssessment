@@ -30,7 +30,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		8A306F2E2D54E92400FB6E9F /* Exceptions for "AppicalAssessment" folder in "AppicalAssessment" target */ = {
+		8AAD0C5C2D58E029008CFD68 /* Exceptions for "AppicalAssessment" folder in "AppicalAssessment" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -40,17 +40,17 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		8A306EE02D54BD0B00FB6E9F /* AppicalAssessment */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				8A306F2E2D54E92400FB6E9F /* Exceptions for "AppicalAssessment" folder in "AppicalAssessment" target */,
-			);
-			path = AppicalAssessment;
-			sourceTree = "<group>";
-		};
 		8A306EF42D54BD0C00FB6E9F /* AppicalAssessmentTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = AppicalAssessmentTests;
+			sourceTree = "<group>";
+		};
+		8AAD0C492D58E029008CFD68 /* AppicalAssessment */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				8AAD0C5C2D58E029008CFD68 /* Exceptions for "AppicalAssessment" folder in "AppicalAssessment" target */,
+			);
+			path = AppicalAssessment;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -83,7 +83,7 @@
 		8A306ED52D54BD0B00FB6E9F = {
 			isa = PBXGroup;
 			children = (
-				8A306EE02D54BD0B00FB6E9F /* AppicalAssessment */,
+				8AAD0C492D58E029008CFD68 /* AppicalAssessment */,
 				8A306EF42D54BD0C00FB6E9F /* AppicalAssessmentTests */,
 				8A306EDF2D54BD0B00FB6E9F /* Products */,
 			);
@@ -115,7 +115,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				8A306EE02D54BD0B00FB6E9F /* AppicalAssessment */,
+				8AAD0C492D58E029008CFD68 /* AppicalAssessment */,
 			);
 			name = AppicalAssessment;
 			packageProductDependencies = (

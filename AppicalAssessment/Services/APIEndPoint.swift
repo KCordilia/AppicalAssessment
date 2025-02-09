@@ -9,4 +9,5 @@ import Foundation
 
 enum APIEndpoint: String {
     case newHires = "/newHires"
+    case todos = "/todos"
 }

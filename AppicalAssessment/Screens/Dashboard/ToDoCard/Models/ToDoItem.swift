@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct ToDoItem {
+struct ToDoItem: Codable {
     let id: Int
     let title: String
-    let dueDate: String?
-    let isCompleted: Bool
+    let dueDate: String
+    var isCompleted: Bool
 }
