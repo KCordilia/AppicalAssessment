@@ -9,8 +9,8 @@ import SwiftUI
 
 struct IntroductionCardView: View {
     var body: some View {
-        VStack {
-            VStack(alignment: .leading, spacing: 10) {
+        CardView {
+            VStack(alignment: .leading) {
                 Image("IntroductionCardImage")
                     .resizable()
                     .scaledToFit()
@@ -19,13 +19,8 @@ struct IntroductionCardView: View {
                 Text("As a manager responsible for onboarding new hires, your role is pivotal in guiding them towards success. By providing clear and comprehensive training, you lay a solid foundation for their professional growth.")
                     .font(.system(size: 16, weight: .light))
             }
-            .padding()
             .padding(.top, 30)
-            .background(Color(.systemBackground))
-            .cornerRadius(16)
-            .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 2)
         }
-        .padding(.horizontal)
     }
 }
 

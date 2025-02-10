@@ -26,11 +26,15 @@ struct DashboardView: View {
                             .padding(.horizontal)
                             .padding(.bottom, 16)
                         ToDoCardView()
-                    }
-                    Divider()
-                        .padding()
-                    NavigationLink(destination: NewHiresView()) {
-                        Text("Go to new hires")
+                        Divider()
+                            .padding()
+                        Text("New hires")
+                            .font(.system(size: 20, weight: .semibold))
+                            .padding(.horizontal)
+                            .padding(.bottom, 16)
+                        NavigationLink(destination: NewHiresView()) {
+                            NewHiresCardView()
+                        }
                     }
                 }
             }
