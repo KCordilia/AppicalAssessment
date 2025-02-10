@@ -9,22 +9,27 @@ import SwiftUI
 
 struct ToDoItemView: View {
     let todo: ToDoItem
+    let toggleCompletion: () -> Void
 
     var body: some View {
-        HStack(spacing: 16) {
-            Circle()
-                .stroke(todo.isCompleted ? Color.blue : Color.gray, lineWidth:  2)
-                .frame(width: 24, height: 24)
-                .overlay(todo.isCompleted ? Image(systemName: "checkmark") : nil)
+        HStack(alignment: .top, spacing: 16) {
+            Button(action: {
+                toggleCompletion()
+            }) {
+                Image(systemName: todo.isCompleted ? "checkmark.circle.fill" : "circle")
+                    .foregroundColor(todo.isCompleted ? .green : .gray)
+            }
             VStack(alignment: .leading) {
                 Text(todo.title)
+                    .font(.system(size: 14, weight: .regular))
                 HStack {
                     let (dueDateText, dueDateColor) = formattedDueDateAndColor(todo.dueDate)
                     Image("calendar")
                         .resizable()
-                        .frame(width: 20, height: 20)
+                        .frame(width: 16, height: 16)
                         .foregroundColor(dueDateColor)
                     Text(dueDateText)
+                        .font(.system(size: 14, weight: .regular))
                         .foregroundColor(dueDateColor)
                 }
             }
@@ -54,5 +59,5 @@ struct ToDoItemView: View {
 }
 
 #Preview {
-    ToDoItemView(todo: .init(id: 1, title: "Check the box", dueDate: "2025-02-12T07:08:10.132Z", isCompleted: true))
+    ToDoItemView(todo: .init(id: "1", title: "Check the box", dueDate: "2025-02-12T07:08:10.132Z", isCompleted: true), toggleCompletion: {})
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct IntroductionCardView: View {
     var body: some View {
-        VStack{
+        VStack {
             VStack(alignment: .leading, spacing: 10) {
                 Image("IntroductionCardImage")
                     .resizable()

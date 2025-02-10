@@ -8,7 +8,7 @@
 import Foundation
 
 struct ToDoItem: Codable {
-    let id: Int
+    let id: String
     let title: String
     let dueDate: String
     var isCompleted: Bool

@@ -9,6 +9,7 @@ import Foundation
 
 protocol NetworkServiceProtocol {
     func fetch<T: Decodable>(from endpoint: String, as type: T.Type) async throws -> T
+    func update<T: Encodable>(to endpoint: String, id: String, body: T) async throws -> Void
 }
 
 final class NetworkService: NetworkServiceProtocol {
@@ -31,5 +32,25 @@ final class NetworkService: NetworkServiceProtocol {
 
         let decodedData = try decoder.decode(T.self, from: data)
         return decodedData
+    }
+
+    func update<T: Encodable>(to endpoint: String, id: String, body: T) async throws -> Void {
+        guard let url = URL(string: "\(baseURL)\(endpoint)/\(id)") else {
+            throw URLError(.badURL)
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        let encoder = JSONEncoder()
+        encoder.dateEncodingStrategy = .iso8601
+        request.httpBody = try encoder.encode(body)
+
+        let (_, response) = try await URLSession.shared.data(for: request)
+
+        guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+            throw URLError(.badServerResponse)
+        }
     }
 }

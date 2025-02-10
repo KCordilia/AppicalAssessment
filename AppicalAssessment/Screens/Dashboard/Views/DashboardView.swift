@@ -19,14 +19,16 @@ struct DashboardView: View {
                         .font(.system(size: 24, weight: .semibold))
                     IntroductionCardView()
                     Divider()
-                        .padding(.vertical)
+                        .padding()
                     VStack(alignment: .leading) {
                         Text("To do's")
                             .font(.system(size: 20, weight: .semibold))
                             .padding(.horizontal)
-                        IntroductionCardView()
-
+                            .padding(.bottom, 16)
+                        ToDoCardView()
                     }
+                    Divider()
+                        .padding()
                     NavigationLink(destination: NewHiresView()) {
                         Text("Go to new hires")
                     }
