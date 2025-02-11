@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import SwiftData
 
-struct NewHire: Codable {
+// Codable model for API Response
+struct NewHireResponse: Codable {
     let id: String
     let firstName: String
     let lastName: String
-    let role: String
     let startDate: String
     let avatar: String
 
@@ -25,8 +26,29 @@ struct NewHire: Codable {
         }
         return "Invalid Date"
     }
-    
+
     var fullName: String {
         "\(firstName) \(lastName)"
     }
 }
+
+// SwiftData model for local storage
+@Model
+class NewHire {
+    @Attribute(.unique) var id: String
+    var firstName: String
+    var lastName: String
+    var startDate: String
+    var avatar: String
+
+    init(id: String, firstName: String, lastName: String, startDate: String, avatar: String) {
+        self.id = id
+        self.firstName = firstName
+        self.lastName = lastName
+        self.startDate = startDate
+        self.avatar = avatar
+    }
+
+
+}
+

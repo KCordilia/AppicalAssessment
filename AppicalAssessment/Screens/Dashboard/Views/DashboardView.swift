@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DashboardView: View {
+    @Environment(\.modelContext) private var modelContext
     @StateObject var viewModel = DashboardViewModel()
 
     var body: some View {
@@ -25,16 +26,14 @@ struct DashboardView: View {
                             .font(.system(size: 20, weight: .semibold))
                             .padding(.horizontal)
                             .padding(.bottom, 16)
-                        ToDoCardView()
+                        ToDoCardView(modelContext: modelContext)
                         Divider()
                             .padding()
                         Text("New hires")
                             .font(.system(size: 20, weight: .semibold))
                             .padding(.horizontal)
                             .padding(.bottom, 16)
-                        NavigationLink(destination: NewHiresView()) {
-                            NewHiresCardView()
-                        }
+                        NewHiresCardView(modelContext: modelContext)
                     }
                 }
             }

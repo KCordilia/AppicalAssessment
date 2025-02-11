@@ -16,12 +16,14 @@ struct ToDoItemView: View {
             Button(action: {
                 toggleCompletion()
             }) {
-                Image(systemName: todo.isCompleted ? "checkmark.circle.fill" : "circle")
-                    .foregroundColor(todo.isCompleted ? .green : .gray)
+                Image(todo.isCompleted ? "checklist.completed" : "checklist.open")
             }
             VStack(alignment: .leading) {
                 Text(todo.title)
                     .font(.system(size: 14, weight: .regular))
+                    .foregroundColor(todo.isCompleted ? .gray : .black)
+                    .strikethrough(todo.isCompleted , color: .gray)
+                    .animation(.easeInOut(duration: 0.15), value: todo.isCompleted)
                 HStack {
                     let (dueDateText, dueDateColor) = formattedDueDateAndColor(todo.dueDate)
                     Image("calendar")
@@ -59,5 +61,5 @@ struct ToDoItemView: View {
 }
 
 #Preview {
-    ToDoItemView(todo: .init(id: "1", title: "Check the box", dueDate: "2025-02-12T07:08:10.132Z", isCompleted: true), toggleCompletion: {})
+    ToDoItemView(todo: .init(id: "1", title: "Check the box", dueDate: "2025-02-12T07:08:10.132Z", isCompleted: true, isSynced: false), toggleCompletion: {})
 }
