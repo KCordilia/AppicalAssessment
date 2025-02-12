@@ -7,15 +7,13 @@
 
 import Foundation
 
-enum AppError: Error, Identifiable {
+enum AppError: Error {
     case networkError
     case serverError
     case badURL
     case requestFailed(statusCode: Int)
     case decodingError
     case unknownError
-
-    var id: String { localizedDescription } // Conforms to Identifiable for SwiftUI alerts
 
     var localizedDescription: String {
         switch self {
