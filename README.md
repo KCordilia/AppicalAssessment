@@ -2,15 +2,16 @@
 
 ## Overview
 
-This iOS app helps manage and display information about new hires. It fetches data from a remote server, handles local persistence, and provides user-friendly error handling and UI states (loading, success, error, and empty).
+This iOS app displays information about new hires and keeping track of your todo's. It fetches data from a remote server, handles local persistence, and provides user-friendly error handling and UI states (loading, success, error, and empty).
 
 ---
 
 ## Features
 
 - Display new hire information (name, start date, avatar).
+- Keeping track of and interacting with to do's
 - Handle network errors with retry functionality.
-- Show custom empty state when no new hires are available.
+- Show custom empty state when no new hires or to do's are available.
 - Sync data with the server while managing local storage.
 
 ---
@@ -27,4 +28,4 @@ This iOS app helps manage and display information about new hires. It fetches da
 
 1. Clone the repository:
    ```bash
-   git clone <your-repository-url>
+   git clone https://github.com/KCordilia/AppicalAssessment.git
