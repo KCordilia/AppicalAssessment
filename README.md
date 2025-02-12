@@ -4,6 +4,13 @@
 
 This iOS app displays information about new hires and keeping track of your todo's. It fetches data from a remote server, handles local persistence, and provides user-friendly error handling and UI states (loading, success, error, and empty).
 
+## Screenshots
+
+![Screenshot 1](Screenshots/screenshot1.png)
+![Screenshot 2](Screenshots/screenshot2.png)
+![Screenshot 3](Screenshots/screenshot3.png)
+![Screenshot 4](Screenshots/screenshot4.png)
+
 ---
 
 ## Features
