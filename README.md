@@ -6,10 +6,10 @@ This iOS app displays information about new hires and keeping track of your todo
 
 ## Screenshots
 
-![Screenshot 1](Screenshots/screenshot1.png)
-![Screenshot 2](Screenshots/screenshot2.png)
-![Screenshot 3](Screenshots/screenshot3.png)
-![Screenshot 4](Screenshots/screenshot4.png)
+<img src="Screenshots/screenshot1.png" width="300" />
+<img src="Screenshots/screenshot2.png" width="300" />
+<img src="Screenshots/screenshot3.png" width="300" />
+<img src="Screenshots/screenshot4.png" width="300" />
 
 ---
 
