@@ -32,32 +32,14 @@ struct ToDoCardView: View {
                     }
                 }
             }
-        case .error:
-            Rectangle()
+        case .error(let error):
+            ErrorView(error: error) {
+                Task {
+                    await viewModel.syncWithServer()
+                }
+            }
         case .empty:
             EmptyTodoCardView()
         }
     }
-}
-
-#Preview {
-//    do {
-//        // Create a configuration for SwiftData
-//        let configuration = ModelConfiguration(isStoredInMemoryOnly: true) // Prevents writing to disk for preview
-//
-//        // Create a container using the configuration
-//        let container = try ModelContainer(for: ToDoItem.self, configurations: configuration)
-//
-//        // Create a context from the container
-//        let modelContext = ModelContext(container)
-//
-//        // Insert some mock data (optional)
-//        let mockToDo = ToDoItem(id: UUID().uuidString, title: "Sample Task", dueDate: "2025-02-10", isCompleted: false)
-//        modelContext.insert(mockToDo)
-//
-//        // Return the preview
-//        ToDoCardView(modelContext: modelContext)
-//    } catch {
-//        fatalError("Failed to create ModelContainer: \(error)")
-//    }
 }

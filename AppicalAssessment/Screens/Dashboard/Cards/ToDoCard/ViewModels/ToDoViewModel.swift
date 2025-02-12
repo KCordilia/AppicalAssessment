@@ -40,10 +40,13 @@ class ToDoViewModel: ObservableObject {
 
                 // Refresh UI
                 todos = fetchLocalTodos()
-//                viewState = todos.isEmpty ? .empty : .success(todos)
                 updateViewState()
+            } catch is URLError {
+                viewState = .error(.networkError)
+            } catch is DecodingError {
+                viewState = .error(.decodingError)
             } catch {
-                viewState = .error(error.localizedDescription)
+                viewState = .error(.unknownError)
             }
         }
 
@@ -84,57 +87,6 @@ class ToDoViewModel: ObservableObject {
 
         try? modelContext.save()
     }
-//    // fetches to do's from the api and stores them in SwiftData
-//    func fetchTodos() async throws {
-//        viewState = .loading
-//        do {
-//            let fetchedTodos = try await networkService.fetch(from: APIEndpoint.todos.rawValue, as: [ToDoItemResponse].self)
-//
-//            if fetchedTodos.isEmpty {
-//                viewState = .empty
-//                return
-//            }
-//
-//            // Fetch current local todos
-//            var localTodos = fetchLocalTodos()
-//
-//            // Merge fetched todos with local storage
-//            for todoResponse in fetchedTodos {
-//                if let index = localTodos.firstIndex(where: { $0.id == todoResponse.id }) {
-//                    // Update existing local todo
-//                    localTodos[index].title = todoResponse.title
-//                    localTodos[index].isCompleted = todoResponse.isCompleted
-//                    localTodos[index].dueDate = todoResponse.dueDate
-//                } else {
-//                    // Add new todos from server
-//                    let newTodo = ToDoItem(
-//                        id: todoResponse.id,
-//                        title: todoResponse.title,
-//                        dueDate: todoResponse.dueDate,
-//                        isCompleted: todoResponse.isCompleted
-//                    )
-//                    modelContext.insert(newTodo)
-//                }
-//            }
-//
-//            // Remove local todos that no longer exist on the server
-//            let fetchedIDs = Set(fetchedTodos.map { $0.id })
-//            for localTodo in localTodos {
-//                if !fetchedIDs.contains(localTodo.id) {
-//                    modelContext.delete(localTodo)
-//                }
-//            }
-//
-//            // Save the final updated state
-//            try modelContext.save()
-//
-//            // Refresh the UI
-//            todos = fetchLocalTodos()
-//            viewState = .success(todos)
-//        } catch {
-//            viewState = .error(error.localizedDescription)
-//        }
-//    }
 
     func toggleCompletion(for todo: ToDoItem) {
         guard let index = todos.firstIndex(where: { $0.id == todo.id }) else { return }

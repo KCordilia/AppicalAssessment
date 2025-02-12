@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		8A802CDE2D5C8CB600AD5A16 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 8A802CDD2D5C8CB600AD5A16 /* Lottie */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		8A306EF22D54BD0C00FB6E9F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -60,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A802CDE2D5C8CB600AD5A16 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +124,7 @@
 			);
 			name = AppicalAssessment;
 			packageProductDependencies = (
+				8A802CDD2D5C8CB600AD5A16 /* Lottie */,
 			);
 			productName = AppicalAssessment;
 			productReference = 8A306EDE2D54BD0B00FB6E9F /* AppicalAssessment.app */;
@@ -199,6 +205,9 @@
 			);
 			mainGroup = 8A306ED52D54BD0B00FB6E9F;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				8A802CDC2D5C8CB600AD5A16 /* XCRemoteSwiftPackageReference "lottie-spm" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8A306EDF2D54BD0B00FB6E9F /* Products */;
 			projectDirPath = "";
@@ -597,6 +606,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8A802CDC2D5C8CB600AD5A16 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8A802CDD2D5C8CB600AD5A16 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8A802CDC2D5C8CB600AD5A16 /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8A306ED62D54BD0B00FB6E9F /* Project object */;
 }

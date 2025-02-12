@@ -10,7 +10,7 @@ import SwiftUI
 struct IntroductionCardView: View {
     var body: some View {
         CardView {
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 16) {
                 Image("IntroductionCardImage")
                     .resizable()
                     .scaledToFit()

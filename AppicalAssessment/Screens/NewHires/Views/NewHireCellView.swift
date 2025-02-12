@@ -25,6 +25,7 @@ struct NewHireCellView: View {
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 50, height: 50)
                         .cornerRadius(50)
+                        .overlay(Circle().stroke(Color.gray, lineWidth: 1))
                 case .failure:
                     Image(systemName: "person.slash")
 
